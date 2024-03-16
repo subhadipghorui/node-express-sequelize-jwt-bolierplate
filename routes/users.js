@@ -36,7 +36,7 @@ router.get('/:uuid', async (req, res) => {
   try {
     const user = await User.findOne({
       where: { uuid },
-      // include: 'posts',
+      include: 'posts',
     })
 
     return res.json(user)

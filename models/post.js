@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ User }) {
       // define association here
       // define association here
-      // userId
+      // UserId -> by default FK
       this.belongsTo(User, { foreignKey: 'user_id', as: 'user' })
     }
     toJSON() {
