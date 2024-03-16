@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
 
     return res.json(users)
   } catch (err) {
-    console.log(err)
     return res.status(500).json({ error: 'Something went wrong' })
   }
 })
@@ -26,7 +25,6 @@ router.post('/', async (req, res) => {
 
     return res.json(user)
   } catch (err) {
-    console.log(err)
     return res.status(500).json(err)
   }
 })
@@ -41,7 +39,6 @@ router.get('/:uuid', async (req, res) => {
 
     return res.json(user)
   } catch (err) {
-    console.log(err)
     return res.status(500).json({ error: 'Something went wrong' })
   }
 })
@@ -55,7 +52,6 @@ router.delete('/:uuid', async (req, res) => {
 
     return res.json({ message: 'User deleted!' })
   } catch (err) {
-    console.log(err)
     return res.status(500).json({ error: 'Something went wrong' })
   }
 })
@@ -74,7 +70,6 @@ router.put('/:uuid', async (req, res) => {
 
     return res.json(user)
   } catch (err) {
-    console.log(err)
     return res.status(500).json({ error: 'Something went wrong' })
   }
 })

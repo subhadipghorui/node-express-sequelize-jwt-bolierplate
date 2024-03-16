@@ -2,32 +2,19 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('users', {
+    await queryInterface.createTable('revoke_tokens', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      token: {
+        type: Sequelize.STRING
+      },
       uuid: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-      },
-      name: {
-        type: Sequelize.STRING,
-        allowNull:false
-      },
-      email: {
-        type: Sequelize.STRING,
-        allowNull:false
-      },
-      password: {
-        type: Sequelize.STRING,
-        allowNull:false
-      },
-      role: {
-        type: Sequelize.STRING,
-        allowNull:false
       },
       created_at: {
         allowNull: false,
@@ -40,6 +27,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('revoke_tokens');
   }
 };

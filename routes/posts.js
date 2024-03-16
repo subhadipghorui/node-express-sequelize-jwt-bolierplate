@@ -12,7 +12,6 @@ router.post("/", async (req, res) => {
 
     return res.json(post);
   } catch (err) {
-    console.log(err);
     return res.status(500).json(err);
   }
 });
@@ -23,7 +22,6 @@ router.get("/", async (req, res) => {
 
     return res.json(posts);
   } catch (err) {
-    console.log(err);
     return res.status(500).json(err);
   }
 });
